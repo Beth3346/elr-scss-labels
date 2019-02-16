@@ -1,0 +1,48 @@
+@import 'node_modules/elr-scss-functions/main';
+
+@mixin elr-label-ribbon($config: ()) {
+  $config: extend(
+    (
+      bg-color: $main-color,
+      color: $white
+    ),
+    $config
+  );
+
+  $bg-color: map-get($config, bg-color);
+  $color: map-get($config, color);
+
+  color: $color;
+  background-color: $bg-color;
+  text-align: right;
+  font-weight: $extra-bold;
+  position: absolute;
+  top: 20px;
+  padding-left: 20px;
+  left: -14px;
+  line-height: 1;
+  border-radius: 0 3px 3px 0;
+
+  &::before {
+    @include elr-triangle(
+      $config: (
+        direction: 'top-right',
+        base: 15px,
+        height: 'auto',
+        color: darken($bg-color, 10%)
+      )
+    );
+    content: '';
+    bottom: -14px;
+    left: 0;
+    position: absolute;
+    display: block;
+  }
+
+  .label-title {
+    padding: 10px 20px 10px 0;
+    color: $white;
+    display: inline-block;
+    font-size: 12px;
+  }
+}

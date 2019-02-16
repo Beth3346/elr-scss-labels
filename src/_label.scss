@@ -1,0 +1,88 @@
+@import 'node_modules/elr-scss-functions/main';
+
+@mixin elr-label($config: ()) {
+  $config: extend(
+    (
+      border-radius: 5px,
+      color: #333,
+      text-color: #fff,
+      border-color: none,
+      font-size: 12px
+    ),
+    $config
+  );
+
+  $border-radius: map-get($config, border-radius);
+  $color: map-get($config, color);
+  $text-color: map-get($config, text-color);
+  $border-color: map-get($config, border-color);
+  $font-size: map-get($config, font-size);
+
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 900;
+  color: $text-color;
+  background-color: $color;
+  font-size: $font-size;
+
+  @if $border-radius != 0 {
+    border-radius: $border-radius;
+  }
+
+  @if $border-color != none {
+    border-color: $border-color;
+  } @else {
+    border-color: $color;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  max-height: 200px;
+  transition: opacity 0.3s, max-height 0s ease 0.4s;
+
+  &.fade {
+    opacity: 0;
+    max-height: 0;
+    display: none;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 0.3125rem;
+
+    span {
+      margin: 0;
+      line-height: 1;
+    }
+
+    &:first-child {
+      margin-right: 0.625rem;
+    }
+
+    &:last-child,
+    &:only-child {
+      margin-right: 0;
+    }
+  }
+
+  span {
+    margin-right: 5px;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    &:only-child,
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .elr-label-close {
+    cursor: pointer;
+  }
+}

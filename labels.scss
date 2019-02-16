@@ -1,0 +1,98 @@
+@import './src/main';
+
+.elr-label {
+  @include elr-label;
+  margin: 10px 5px;
+}
+
+.elr-pill-label {
+  @include elr-label(
+    $config: (
+      border-radius: 30px
+    )
+  );
+}
+
+.elr-label-info {
+  @include elr-label-context(
+    $config: (
+      type: 'info'
+    )
+  );
+}
+
+.elr-label-danger {
+  @include elr-label-context(
+    $config: (
+      type: 'danger'
+    )
+  );
+}
+
+.elr-label-warning {
+  @include elr-label-context(
+    $config: (
+      type: 'warning'
+    )
+  );
+}
+
+.elr-label-success {
+  @include elr-label-context(
+    $config: (
+      type: 'success'
+    )
+  );
+}
+
+.elr-label-muted {
+  @include elr-label-context(
+    $config: (
+      type: 'muted'
+    )
+  );
+}
+
+.corner-label-box {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #333;
+  width: 300px;
+  height: 300px;
+}
+
+.elr-label-corner-top-left {
+  @include elr-label-corner(
+    $config: (
+      position-y: 'top',
+      position-x: 'left'
+    )
+  );
+}
+
+.elr-label-corner-top-right {
+  @include elr-label-corner(
+    $config: (
+      position-y: 'top',
+      position-x: 'right'
+    )
+  );
+}
+
+.elr-label-corner-bottom-left {
+  @include elr-label-corner(
+    $config: (
+      position-y: 'bottom',
+      position-x: 'left'
+    )
+  );
+}
+
+.elr-label-corner-bottom-right {
+  @include elr-label-corner(
+    $config: (
+      position-y: 'bottom',
+      position-x: 'right'
+    )
+  );
+}
