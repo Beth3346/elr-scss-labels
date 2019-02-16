@@ -3,8 +3,8 @@
 @mixin elr-label-ribbon($config: ()) {
   $config: extend(
     (
-      bg-color: $main-color,
-      color: $white
+      bg-color: #333,
+      color: #fff
     ),
     $config
   );
@@ -15,34 +15,32 @@
   color: $color;
   background-color: $bg-color;
   text-align: right;
-  font-weight: $extra-bold;
+  font-weight: 900;
   position: absolute;
-  top: 20px;
-  padding-left: 20px;
-  left: -14px;
+  top: 1.25rem;
+  padding-left: 1.25rem;
+  left: -15px;
   line-height: 1;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 0.1875rem 0.1875rem 0;
 
   &::before {
-    @include elr-triangle(
-      $config: (
-        direction: 'top-right',
-        base: 15px,
-        height: 'auto',
-        color: darken($bg-color, 10%)
-      )
-    );
+    width: 0;
+    height: 0;
+    border-top: 7.5px solid $bg-color;
+    border-right: 7.5px solid $bg-color;
+    border-bottom: 7.5px solid transparent;
+    border-left: 7.5px solid transparent;
     content: '';
-    bottom: -14px;
+    bottom: -15px;
     left: 0;
     position: absolute;
     display: block;
   }
 
-  .label-title {
-    padding: 10px 20px 10px 0;
-    color: $white;
+  .elr-label-ribbon-title {
+    padding: 0.625rem 1.25rem 0.625rem 0;
+    color: $color;
     display: inline-block;
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }

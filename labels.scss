@@ -96,3 +96,7 @@
     )
   );
 }
+
+.elr-label-ribbon {
+  @include elr-label-ribbon;
+}
