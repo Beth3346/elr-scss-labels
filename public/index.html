@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Labels Demo | ELR CSS Utilities</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+      integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/labels.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="wrapper">
+      <div class="content-holder">
+        <div class="demo-content">
+          <h1 class="main-heading">Labels</h1>
+          <div>
+            <div class="elr-label">
+              <span class="elr-label-icon"><i class="fa fa-heart"></i></span>
+              <span class="elr-label-title">Label</span>
+              <span class="elr-label-value">10</span>
+            </div>
+            <div class="elr-pill-label">
+              <span class="elr-label-title">Pill Label</span>
+            </div>
+          </div>
+        </div>
+        <div class="demo-content">
+          <h1 class="main-heading">Context Labels</h1>
+          <p class="subheading">
+            Use context labels to add context of the label content
+          </p>
+          <div>
+            <div class="elr-label elr-label-info"><span>Information</span></div>
+            <div class="elr-label elr-label-danger"><span>Danger</span></div>
+            <div class="elr-label elr-label-warning"><span>Warning</span></div>
+            <div class="elr-label elr-label-success"><span>Success</span></div>
+            <div class="elr-label elr-label-muted"><span>Muted</span></div>
+          </div>
+        </div>
+        <div class="demo-content">
+          <h1 class="main-heading">Dismissible Labels</h1>
+          <p class="subheading">Labels that can be removed with a click</p>
+          <div>
+            <div class="elr-label">
+              <span class="elr-label-title">Click Here</span>
+              <button>
+                <span class="fa fa-times elr-label-close" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="demo-content">
+          <h1 class="main-heading">Corner Labels</h1>
+          <p class="subheading">
+            Use corner labels to tag a card component.
+          </p>
+          <div class="corner-label-box">
+            <div class="elr-label-corner-top-left">
+              <div class="elr-label-triangle"></div>
+              <span class="elr-label-icon fa fa-heart"></span>
+            </div>
+            <div class="elr-label-corner-top-right">
+              <div class="elr-label-triangle"></div>
+              <span class="elr-label-icon fa fa-heart"></span>
+            </div>
+            <div class="elr-label-corner-bottom-left">
+              <div class="elr-label-triangle"></div>
+              <span class="elr-label-icon fa fa-heart"></span>
+            </div>
+            <div class="elr-label-corner-bottom-right">
+              <div class="elr-label-triangle"></div>
+              <span class="elr-label-icon fa fa-heart"></span>
+            </div>
+          </div>
+        </div>
+        <div class="demo-content">
+          <h1 class="main-heading">Ribbon Labels</h1>
+          <p class="subheading">Use ribbon labels to add a text label to a card</p>
+          <div class="corner-label-box">
+            <div class="elr-label-ribbon">
+              <span class="elr-label-ribbon-title">Updated!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

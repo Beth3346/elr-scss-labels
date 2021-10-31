@@ -1,4 +1,3 @@
-@import 'node_modules/elr-scss-functions/main';
 // TODO: map over types to avoid crazy if/else statements
 
 $grey: #999;
@@ -18,26 +17,26 @@ $muted-color: $grey;
 @mixin elr-label-context($config: ()) {
   $config: extend(
     (
-      type: 'info'
+      type: "info",
     ),
     $config
   );
 
   $type: map-get($config, type);
 
-  @if $type == 'info' {
+  @if $type == "info" {
     background-color: $info-color;
     border-color: $info-color;
-  } @else if $type == 'danger' {
+  } @else if $type == "danger" {
     background-color: $danger-color;
     border-color: $danger-color;
-  } @else if $type == 'warning' {
+  } @else if $type == "warning" {
     background-color: $warning-color;
     border-color: $warning-color;
-  } @else if $type == 'success' {
+  } @else if $type == "success" {
     background-color: $success-color;
     border-color: $success-color;
-  } @else if $type == 'muted' {
+  } @else if $type == "muted" {
     background-color: $muted-color;
     border-color: $muted-color;
   }

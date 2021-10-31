@@ -1,12 +1,10 @@
-@import 'node_modules/elr-scss-functions/main';
-
 @mixin elr-label-corner($config: ()) {
   $config: extend(
     (
-      position-y: 'top',
-      position-x: 'left',
+      position-y: "top",
+      position-x: "left",
       bg-color: #333,
-      color: #fff
+      color: #fff,
     ),
     $config
   );
@@ -37,15 +35,15 @@
       border-bottom-color: transparent;
     }
 
-    @if $y == 'bottom' {
+    @if $y == "bottom" {
       border-top-color: transparent;
     }
 
-    @if $x == 'left' {
+    @if $x == "left" {
       border-right-color: transparent;
     }
 
-    @if $x == 'right' {
+    @if $x == "right" {
       border-left-color: transparent;
     }
   }
@@ -55,19 +53,19 @@
     position: absolute;
     color: $color;
 
-    @if $y == 'top' {
+    @if $y == "top" {
       top: 10px;
     }
 
-    @if $y == 'bottom' {
+    @if $y == "bottom" {
       top: 30px;
     }
 
-    @if $x == 'left' {
+    @if $x == "left" {
       left: 12px;
     }
 
-    @if $x == 'right' {
+    @if $x == "right" {
       right: 12px;
     }
   }

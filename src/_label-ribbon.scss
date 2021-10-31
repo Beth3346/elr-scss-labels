@@ -1,10 +1,8 @@
-@import 'node_modules/elr-scss-functions/main';
-
 @mixin elr-label-ribbon($config: ()) {
   $config: extend(
     (
       bg-color: #333,
-      color: #fff
+      color: #fff,
     ),
     $config
   );
@@ -30,7 +28,7 @@
     border-right: 7.5px solid $bg-color;
     border-bottom: 7.5px solid transparent;
     border-left: 7.5px solid transparent;
-    content: '';
+    content: "";
     bottom: -15px;
     left: 0;
     position: absolute;
