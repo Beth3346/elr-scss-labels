@@ -23,7 +23,7 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.0.0",
-    "husky": "^7.0.0",
+    "husky": "^7.0.4",
     "np": "^7.5.0",
     "npm-check-updates": "^11.8.5",
     "sass": "^1.43.4"
@@ -39,7 +39,7 @@
     "url": "https://github.com/Beth3346/elr-scss-labels.git"
   },
   "dependencies": {
-    "elr-scss-animations": "0.0.4",
-    "elr-scss-functions": "0.1.2"
+    "elr-scss-animations": "0.0.9",
+    "elr-scss-functions": "1.1.6"
   }
 }
