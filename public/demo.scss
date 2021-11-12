@@ -1,4 +1,35 @@
-@import './src/main';
+@import "./src/main";
+@import "elr-scss-reset/src/main";
+
+@include elr-reset;
+
+.wrapper {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.main-heading {
+  font-size: 36px;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.subheading {
+  font-size: 16px;
+  color: #666;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.demo-content {
+  position: relative;
+  padding: 20px 0;
+}
 
 .elr-label {
   @include elr-label;
@@ -8,7 +39,7 @@
 .elr-pill-label {
   @include elr-label(
     $config: (
-      border-radius: 30px
+      border-radius: 30px,
     )
   );
 }
@@ -16,7 +47,7 @@
 .elr-label-info {
   @include elr-label-context(
     $config: (
-      type: 'info'
+      type: "info",
     )
   );
 }
@@ -24,7 +55,7 @@
 .elr-label-danger {
   @include elr-label-context(
     $config: (
-      type: 'danger'
+      type: "danger",
     )
   );
 }
@@ -32,7 +63,7 @@
 .elr-label-warning {
   @include elr-label-context(
     $config: (
-      type: 'warning'
+      type: "warning",
     )
   );
 }
@@ -40,7 +71,7 @@
 .elr-label-success {
   @include elr-label-context(
     $config: (
-      type: 'success'
+      type: "success",
     )
   );
 }
@@ -48,7 +79,7 @@
 .elr-label-muted {
   @include elr-label-context(
     $config: (
-      type: 'muted'
+      type: "muted",
     )
   );
 }
@@ -64,8 +95,8 @@
 .elr-label-corner-top-left {
   @include elr-label-corner(
     $config: (
-      position-y: 'top',
-      position-x: 'left'
+      position-y: "top",
+      position-x: "left",
     )
   );
 }
@@ -73,8 +104,8 @@
 .elr-label-corner-top-right {
   @include elr-label-corner(
     $config: (
-      position-y: 'top',
-      position-x: 'right'
+      position-y: "top",
+      position-x: "right",
     )
   );
 }
@@ -82,8 +113,8 @@
 .elr-label-corner-bottom-left {
   @include elr-label-corner(
     $config: (
-      position-y: 'bottom',
-      position-x: 'left'
+      position-y: "bottom",
+      position-x: "left",
     )
   );
 }
@@ -91,8 +122,8 @@
 .elr-label-corner-bottom-right {
   @include elr-label-corner(
     $config: (
-      position-y: 'bottom',
-      position-x: 'right'
+      position-y: "bottom",
+      position-x: "right",
     )
   );
 }
