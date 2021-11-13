@@ -55,6 +55,8 @@ yarn add elr-scss-labels
 </div>
 ```
 
+### Context Labels
+
 ```scss
 .elr-label-info {
   @include elr-label-context(
@@ -127,12 +129,85 @@ yarn add elr-scss-labels
 
 ### Dismissible Labels
 
+Just add a button with an icon
+
 ```html
 <div class="elr-label">
   <span class="elr-label-title">Click Here</span>
   <button>
     <span class="fa fa-times elr-label-close" />
   </button>
+</div>
+```
+
+### Corner Labels
+
+Labels have a position: absolute style rule so make sure you add position: relative to the label container.
+
+```scss
+.corner-label-box {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #333;
+  width: 300px;
+  height: 300px;
+}
+
+.elr-label-corner-top-left {
+  @include elr-label-corner(
+    $config: (
+      position-y: "top",
+      position-x: "left",
+    )
+  );
+}
+
+.elr-label-corner-top-right {
+  @include elr-label-corner(
+    $config: (
+      position-y: "top",
+      position-x: "right",
+    )
+  );
+}
+
+.elr-label-corner-bottom-left {
+  @include elr-label-corner(
+    $config: (
+      position-y: "bottom",
+      position-x: "left",
+    )
+  );
+}
+
+.elr-label-corner-bottom-right {
+  @include elr-label-corner(
+    $config: (
+      position-y: "bottom",
+      position-x: "right",
+    )
+  );
+}
+```
+
+```html
+<div class="corner-label-box">
+  <div class="elr-label-corner-top-left">
+    <div class="elr-label-triangle"></div>
+    <span class="elr-label-icon fa fa-heart"></span>
+  </div>
+  <div class="elr-label-corner-top-right">
+    <div class="elr-label-triangle"></div>
+    <span class="elr-label-icon fa fa-heart"></span>
+  </div>
+  <div class="elr-label-corner-bottom-left">
+    <div class="elr-label-triangle"></div>
+    <span class="elr-label-icon fa fa-heart"></span>
+  </div>
+  <div class="elr-label-corner-bottom-right">
+    <div class="elr-label-triangle"></div>
+    <span class="elr-label-icon fa fa-heart"></span>
+  </div>
 </div>
 ```
 
