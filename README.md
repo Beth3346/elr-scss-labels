@@ -211,4 +211,22 @@ Labels have a position: absolute style rule so make sure you add position: relat
 </div>
 ```
 
+### Ribbon Labels
+
+Ribbon labels have a position: absolute style rule so make sure you add position: relative to the label container.
+
+```scss
+.label-ribbon {
+  @include elr-label-ribbon;
+}
+```
+
+```html
+<div class="corner-label-box">
+  <div class="label-ribbon">
+    <span class="elr-label-ribbon-title">Updated!</span>
+  </div>
+</div>
+```
+
 ## License SEE LICENSE IN LICENSE.md
