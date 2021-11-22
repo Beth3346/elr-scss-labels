@@ -1,5 +1,251 @@
 @import "elr-scss-functions/src/main";
-@import "src/label";
-@import "src/label-corner";
-@import "src/label-ribbon";
-@import "src/label-context";
+@import "elr-scss-config/src/main";
+
+@mixin elr-label($config: ()) {
+  $config: extend(
+    (
+      border-radius: $border-radius,
+      color: $text-color,
+      text-color: $white,
+      border-color: none,
+      font-size: 12px,
+    ),
+    $config
+  );
+
+  $border-radius: map-get($config, border-radius);
+  $color: map-get($config, color);
+  $text-color: map-get($config, text-color);
+  $border-color: map-get($config, border-color);
+  $font-size: map-get($config, font-size);
+
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 900;
+  color: $text-color;
+  background-color: $color;
+  font-size: $font-size;
+
+  @if $border-radius != 0 {
+    border-radius: $border-radius;
+  }
+
+  @if $border-color != none {
+    border-color: $border-color;
+  } @else {
+    border-color: $color;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  max-height: 200px;
+  transition: opacity 0.3s, max-height 0s ease 0.4s;
+
+  &.fade {
+    opacity: 0;
+    max-height: 0;
+    display: none;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 0.3125rem;
+
+    span {
+      margin: 0;
+      line-height: 1;
+    }
+
+    &:first-child {
+      margin-right: 0.625rem;
+    }
+
+    &:last-child,
+    &:only-child {
+      margin-right: 0;
+    }
+  }
+
+  span {
+    margin-right: 5px;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    &:only-child,
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .elr-label-close {
+    cursor: pointer;
+  }
+}
+
+@mixin elr-label-corner($config: ()) {
+  $config: extend(
+    (
+      position-y: "top",
+      position-x: "left",
+      bg-color: #333,
+      color: #fff,
+    ),
+    $config
+  );
+
+  $y: map-get($config, position-y);
+  $x: map-get($config, position-x);
+  $bg-color: map-get($config, bg-color);
+  $color: map-get($config, color);
+
+  position: absolute;
+  #{$y}: 0;
+  #{$x}: 0;
+  padding: 0;
+  margin: 0;
+
+  .elr-label-triangle {
+    width: 0;
+    height: 0;
+    border-width: 30px;
+    border-style: solid;
+    text-align: center;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+
+    @if $y == top {
+      border-bottom-color: transparent;
+    }
+
+    @if $y == "bottom" {
+      border-top-color: transparent;
+    }
+
+    @if $x == "left" {
+      border-right-color: transparent;
+    }
+
+    @if $x == "right" {
+      border-left-color: transparent;
+    }
+  }
+
+  .elr-label-icon {
+    font-size: 14px;
+    position: absolute;
+    color: $color;
+
+    @if $y == "top" {
+      top: 10px;
+    }
+
+    @if $y == "bottom" {
+      top: 30px;
+    }
+
+    @if $x == "left" {
+      left: 12px;
+    }
+
+    @if $x == "right" {
+      right: 12px;
+    }
+  }
+}
+
+@mixin elr-label-ribbon($config: ()) {
+  $config: extend(
+    (
+      bg-color: #333,
+      color: #fff,
+    ),
+    $config
+  );
+
+  $bg-color: map-get($config, bg-color);
+  $color: map-get($config, color);
+
+  color: $color;
+  background-color: $bg-color;
+  text-align: right;
+  font-weight: 900;
+  position: absolute;
+  top: 1.25rem;
+  padding-left: 1.25rem;
+  left: -15px;
+  line-height: 1;
+  border-radius: 0 0.1875rem 0.1875rem 0;
+
+  &::before {
+    width: 0;
+    height: 0;
+    border-top: 7.5px solid $bg-color;
+    border-right: 7.5px solid $bg-color;
+    border-bottom: 7.5px solid transparent;
+    border-left: 7.5px solid transparent;
+    content: "";
+    bottom: -15px;
+    left: 0;
+    position: absolute;
+    display: block;
+  }
+
+  .elr-label-ribbon-title {
+    padding: 0.625rem 1.25rem 0.625rem 0;
+    color: $color;
+    display: inline-block;
+    font-size: 0.75rem;
+  }
+}
+
+// TODO: map over types to avoid crazy if/else statements
+
+// $grey: #999;
+// $red: #f7322f;
+// $yellow: #d1cb34;
+// $green: #7aba7b;
+// $blue: #1daaf0;
+
+// // font colors
+
+// $danger-color: $red;
+// $warning-color: $yellow;
+// $success-color: $green;
+// $info-color: $blue;
+// $muted-color: $grey;
+
+@mixin elr-label-context($config: ()) {
+  $config: extend(
+    (
+      type: "info",
+    ),
+    $config
+  );
+
+  $type: map-get($config, type);
+
+  @if $type == "info" {
+    background-color: $info-color;
+    border-color: $info-color;
+  } @else if $type == "danger" {
+    background-color: $danger-color;
+    border-color: $danger-color;
+  } @else if $type == "warning" {
+    background-color: $warning-color;
+    border-color: $warning-color;
+  } @else if $type == "success" {
+    background-color: $success-color;
+    border-color: $success-color;
+  } @else if $type == "muted" {
+    background-color: $muted-color;
+    border-color: $muted-color;
+  }
+}
